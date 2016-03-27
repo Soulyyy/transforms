@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+configurations {
+    provided
+    compile.extendsFrom provided
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.slf4j:slf4j-simple:1.7.19'
+    provided 'org.projectlombok:lombok:1.16.8'
+
+    compile "javax.ws.rs:jsr311-api:1.1.1"
+
+    compile 'org.glassfish.jersey.core:jersey-server:2.22.1'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.22.1'
+    compile 'org.glassfish.jersey.ext:jersey-mvc:2.22.1'
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.22.1'
+
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.22.1'
+}
